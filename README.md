@@ -4,7 +4,7 @@
 
 ### Prerequisite: 
 - The provided excel file `protein_tables` should be in the root directory.
-- The genomes of `common_bacteria_set` should be in the `./sequences/` relative directory. (The genomes have been included in the data folder)
+- The genomes of `common_bacteria_set` should be in the `./sequences/` relative directory. (The genomes have been included in the [data](./data/genomes) folder)
 -  python 3
 -  Following python libs installed
     - Bio
@@ -18,8 +18,8 @@ execute script [find_common_bacteria](./code/find_common_bacteria.py)
 
 > Note: We have got all 21 given species as the common bacteria set
 )
-### Step 2: Extracting gene sequences for each protein in each species (homologous_gene_sequencces)
-execute script [sequence_extraction](./sequence_extraction.py)
+### Step 2: Extracting gene sequences for each protein in each species (homologous_gene_sequences)
+execute script [sequence_extraction](./code/sequence_extraction.py)
 
 > Note: Resulting fasta files for each protein is saved in the output folder
 
@@ -27,5 +27,5 @@ execute script [sequence_extraction](./sequence_extraction.py)
 
 ### Step 4: Construct phylogenetic trees
 
-After creating the alignments in `nexus` format, execute script  [tree_construction](./tree_construction.py) to generate phylogentic trees and calculate RF distance. 
+After creating the alignments in `nexus` format, execute script  [tree_construction](./code/tree_construction.py) to generate phylogentic trees and calculate RF distance. 
 
