@@ -14,7 +14,7 @@
 - Clustax software
 
 ### Step 1: Finding the cpmmon bacteria set (Optional)
-execute script [find_common_bacteria](./find_common_bacteria.py) 
+execute script [find_common_bacteria](./code/find_common_bacteria.py) 
 
 > Note: We have got all 21 given species as the common bacteria set
 )
