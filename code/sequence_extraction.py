@@ -5,7 +5,7 @@ from Bio.Seq import Seq
 
 
 # read proteins table excel file. Provide he correct location
-xls = pd.ExcelFile('protein_tables.xlsx')
+xls = pd.ExcelFile('./../data/protein_tables.xlsx')
 
 # The list of proteins that we consider
 protein_set = ["cytochrome d ubiquinol oxidase subunit II", "LysR family transcriptional regulator",
@@ -45,8 +45,7 @@ sequences: []
 
 def extractGeneSequences():
     for species in all_species:
-        fileName = "sequences/"+species["species_accession"]+".fasta"
-        print(fileName)
+        fileName = "./../data/genomes/"+species["species_accession"]+".fasta"
         with open(fileName) as handle:
             for record in SeqIO.parse(handle, "fasta"):
                 for i in range(0, 4):
@@ -83,14 +82,14 @@ def writeSequences():
             record = SeqRecord(seq[1], id=seq[0], name=seq[0],
                                description=protein_set[i]+" protein of "+seq[0])
             sequences.append(record)
-        SeqIO.write(sequences, "output/"+fileName, "fasta")
+        SeqIO.write(sequences, "./../data/output/"+fileName, "fasta")
 
 
 def main():
     findStartAndStop()
     extractGeneSequences()
     writeSequences()
-
+    print("Successfully extracted sequeces and saved in /output directory")
 
 if __name__ == "__main__":
     main()
